@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: "sofia pro light" ;
+    src: url(./assets/SofiaProLight.ttf) format('truetype'),
+}
+@font-face {
+    font-family: "sofia pro bold" ;
+    src: url(./assets/SofiaProBold.ttf) format('truetype'),
+}
+
+@font-face {
+    font-family: "sofia pro regular" ;
+    src: url(./assets/SofiaProRegular.ttf) format('truetype'),
+}
+

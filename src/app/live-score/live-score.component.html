@@ -1,0 +1,40 @@
+
+<div class="table-responsive tw-mt-8">
+    <table class="table">
+        <thead class="table-dark">
+            <tr>
+                <th class="tw-text-center" style="font-family: 'sofia pro bold'; font-size: small;">Match of the Day</th>
+            </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let match of matches">
+            <td class="tw-flex bg-dark bg-gradient">
+                <img [src]="match?.area.flag" style="width: 18px; height: 18px; margin-right: 8px;">
+                <p style="font-family: 'sofia pro bold'; font-size: 11px;color: rgb(255, 255, 255);">{{match?.competition.name}}</p>
+            </td>
+            <td class="tw-flex" style="color: rgb(0, 0, 0); font-family: 'sofia pro bold'; border-bottom-style: hidden;">
+                <p style="font-size: 11px; margin-right: 20px; margin-top: 15px;">{{hourFormat(match.utcDate)}}</p>
+                <img [src]="match?.homeTeam.crest" style="width: 15px; height: 15px;">
+                <p style="font-size: 11px; margin-left: 8px; margin-top: -1px;">{{match?.homeTeam.shortName}}</p>
+            </td> 
+            <td class="tw-flex" style="font-family: 'sofia pro bold'; border-bottom-style: hidden;">
+                <p style="font-size: 10px; margin-left: 160px; margin-top: -48px;">{{getFtGoal(match?.score.fullTime.home)}}</p>
+                <p style="font-size: 10px; margin-top:-48px; margin-left: 20px;">{{getHtGoal(match?.score.halfTime.home)}}</p>
+            </td>
+            <td class="tw-flex" style="color: black; font-family: 'sofia pro bold'; border-bottom-style: hidden;">
+                <img [src]="match?.awayTeam.crest" style="width: 15px; height: 15px; margin-left: 48px; margin-top: -30px;">
+                <p style="font-size: 11px; margin-left: 8px; margin-top: -30px;">{{match?.awayTeam.shortName}}</p>
+            </td>
+            <td class="tw-flex" style="font-family: 'sofia pro bold'; margin-top: -25px; border-bottom-style: hidden;">
+                <p style="font-size: 10px; margin-left: 160px; margin-top: -20px;">{{getFtGoal(match?.score.fullTime.away)}}</p>
+                <p style="font-size: 10px; margin-top: -20px; margin-left: 20px;">{{getHtGoal(match?.score.halfTime.away)}}</p>
+            </td>
+            <td class="tw-flex" style="font-family: sofia pro bold; font-size: 11px; margin-top: -20px;">
+                <p class="finished" style="margin-left: 250px; margin-top: -35px;">{{match?.status}}</p>
+            </td>
+        </tr>
+        <tr>
+        </tr>
+        </tbody>
+    </table>
+</div> 

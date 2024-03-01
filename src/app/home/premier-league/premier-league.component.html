@@ -1,0 +1,29 @@
+<div class="table-responsive">
+    <table class="table">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col" class="tw-flex" style="color:gold;font-family: 'sofia pro bold'; font-size: small;">
+                    <img [src]="this.matches[0]?.area.flag" style="width: 20px; margin-right: 4px;"> 
+                    {{this.matches[0]?.area.name}} : {{this.matches[0]?.competition.name}}
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let match of matches ; let i = index" >
+                <td class="tw-flex" style=" font-family: 'sofia pro bold'; font-size: 12px; 
+                border-bottom-style: hidden;">
+                    <p style="color:rgb(0, 0, 0) ; margin-right: 8px; margin-top: 18px;">{{formatDate(match?.utcDate)}}</p>
+                    <img [src]="match?.homeTeam.crest" style="width: 16px; height: 16px; margin-right: 4px; ">
+                    <p style="margin-top: -2px;"> {{match?.homeTeam.shortName}} </p>
+                </td>
+                <td class="tw-flex" style="font-family: 'sofia pro bold';">
+                    <img [src]="match?.awayTeam.crest" style="width: 16px; height: 16px; margin-left:108px; margin-top: -15px;">
+                    <p style="margin-left: 4px; font-size: 12px; margin-top: -16px;">{{match?.awayTeam.shortName}}</p>
+                </td>
+                <td class="tw-flex bg-dark bg-gradient" style="font-family: 'sofia pro bold'; font-size: 12px;">
+                    <p style="color: #fff;">Prediction score:</p> 
+                    <p style="margin-left: 4px; color: #fff;">{{scores[i]}}</p></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
