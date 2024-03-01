@@ -5,6 +5,10 @@ import { BundesligaStandingComponent } from './bundesliga-standing/bundesliga-st
 import { LigaStandingComponent } from './liga-standing/liga-standing.component';
 import { SerieAStandingComponent } from './serie-astanding/serie-astanding.component';
 import { Ligue1StandingComponent } from './ligue1-standing/ligue1-standing.component';
+import { EredivisieStandingComponent } from './eredivisie-standing/eredivisie-standing.component';
+import { PrimeiraLigaStandingComponent } from './primeira-liga-standing/primeira-liga-standing.component';
+import { BresileiroSeriaStandingComponent } from './bresileiro-seria-standing/bresileiro-seria-standing.component';
+import { ChampionshipStandingComponent } from './championship-standing/championship-standing.component';
 
 const routes: Routes = [
   {
@@ -26,6 +30,22 @@ const routes: Routes = [
   {
     path: 'ligue1',
     component: Ligue1StandingComponent,
+  },
+  {
+    path: 'eredivisie',
+    component: EredivisieStandingComponent,
+  },
+  {
+    path: 'primeiraliga',
+    component: PrimeiraLigaStandingComponent,
+  },
+  {
+    path: 'brasileiroserieA',
+    component: BresileiroSeriaStandingComponent,
+  },
+  {
+    path: 'championship',
+    component: ChampionshipStandingComponent,
   },
 
 ]

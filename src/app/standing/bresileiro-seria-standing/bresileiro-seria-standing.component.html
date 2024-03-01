@@ -1,1 +1,42 @@
-<p>bresileiro-seria-standing works!</p>
+<div class="standing-container">
+    <div class="tw-flex tw-mt-8 bg-dark" style="border-bottom: 0.5px solid rgb(101, 101, 101); height:40.4px;">
+        <img [src]="this.area?.flag" style="width: 22px; height: 22px; margin-left: 8px; margin-top: 12px;">
+        <p style="font-size:14px; font-family: sofia pro bold; margin-left: 4px; color: #fff; margin-top: 12px;">{{this.area?.name}}: {{this.competition?.name}}</p> 
+    </div>
+    <div class="table-responsive">
+        <table class="table">
+            <thead class="table-dark">
+                <tr style="font-family: sofia pro light; font-size: 11px; margin-left: 8px;">
+                    <th scope="col" style="width: 1600px;">
+                       TEAMS
+                    </th>
+                    <th scope="col" style="width: 2px;">MP</th>
+                    <th scope="col" style="width: 2px;">W</th>
+                    <th scope="col" style="width: 2px;">D</th>
+                    <th scope="col" style="width: 2px;">L</th>
+                    <th scope="col" style="width: 2px;">G</th>
+                    <th scope="col" style="width: 2px;">DIF</th>
+                    <th scope="col">PTS</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let standing of standings[0]?.table; let i=index" style="font-family: sofia pro bold; font-size:12px" >
+                    <td class="tw-flex">
+                        <p>{{standing?.position}}.</p>
+                        <img [src]="standing?.team.crest" style="width: 20px; height: 20px; margin-left: 10px;">
+                        <p style="margin-left: 8px;">{{standing?.team.shortName}}</p>
+                    </td>
+                    <td>{{standing?.playedGames}}</td>
+                    <td>{{standing?.won}}</td>
+                    <td>{{standing?.draw}}</td>
+                    <td>{{standing?.lost}}</td>
+                    <td>{{standing?.goalsFor}}:{{standing?.goalsAgainst}}</td>
+                    <td>{{standing?.goalDifference}}</td>
+                    <td>{{standing?.points}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
