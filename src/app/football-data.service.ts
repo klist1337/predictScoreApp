@@ -16,13 +16,6 @@ export class FootballDataService {
     
   }
 
-  private subscribeToRouterEvents(): void {
-    this.router.events.subscribe(event => {
-      if (event instanceof NavigationEnd) {
-        console.log('NavigationEnd event:', event);
-      }
-    });
-  }
 
   getMatch(matchday: number, code: string) : Observable<any> {
     // cachebuster add time to url to ensure that the browser make each request as unique

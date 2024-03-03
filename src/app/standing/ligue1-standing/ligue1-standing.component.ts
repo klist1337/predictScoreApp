@@ -20,7 +20,7 @@ export class Ligue1StandingComponent {
         this.area = data["area"],
         this.competition = data["competition"];
         this.standings = data["standings"];
-        console.log(this.standings[0]?.table[0]);
+         
       }
     })
   }

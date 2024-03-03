@@ -2,82 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FootballDataService } from '../football-data.service';
 import { error } from 'console';
 
-interface score {
-    winner: string;
-    duration: string;
-    fullTime: { 
-      home:  number;
-      away:  number;
-    };
-    halfTime: { 
-      home: number; 
-      away: number;
-    }
-  }
 
-  const SCORES : score[] =[
-    {
-    winner: 'DRAW',
-    duration: 'REGULAR',
-    fullTime: { home: 1, away: 1 },
-    halfTime: { home: 0, away: 1 }
-    },
-    {
-    winner: 'DRAW',
-    duration: 'REGULAR',
-    fullTime: { home: 1, away: 1 },
-    halfTime: { home: 0, away: 1 }
-    },
-    {
-    winner: 'DRAW',
-    duration: 'REGULAR',
-    fullTime: { home: 1, away: 1 },
-    halfTime: { home: 0, away: 1 }
-    },
-    {
-    winner: 'DRAW',
-    duration: 'REGULAR',
-    fullTime: { home: 1, away: 1 },
-    halfTime: { home: 0, away: 1 }
-    },
-    {
-    winner: 'DRAW',
-    duration: 'REGULAR',
-    fullTime: { home: 1, away: 1 },
-    halfTime: { home: 0, away: 1 }
-    },
-    {
-    winner: 'DRAW',
-    duration: 'REGULAR',
-    fullTime: { home: 1, away: 1 },
-    halfTime: { home: 0, away: 1 }
-    },
-    {
-    winner: 'DRAW',
-    duration: 'REGULAR',
-    fullTime: { home: 1, away: 1 },
-    halfTime: { home: 0, away: 1 }
-    },
-    {
-    winner: 'DRAW',
-    duration: 'REGULAR',
-    fullTime: { home: 1, away: 1 },
-    halfTime: { home: 0, away: 1 }
-    },
-    {
-    winner: 'DRAW',
-    duration: 'REGULAR',
-    fullTime: { home: 1, away: 1 },
-    halfTime: { home: 0, away: 1 }
-    },
-    {
-    winner: 'DRAW',
-    duration: 'REGULAR',
-    fullTime: { home: 1, away: 1 },
-    halfTime: { home: 0, away: 1 }
-    },
-
-  ]
+  
 
 @Component({
   selector: 'app-live-score',
@@ -85,16 +11,15 @@ interface score {
   styleUrl: './live-score.component.css'
 })
 export class LiveScoreComponent implements OnInit{
-  score = SCORES;
   matches: any[] = [];
   constructor(private footBallService: FootballDataService) {}
-
   ngOnInit(): void {
     this.footBallService.getMatchOfTheDay()
     .subscribe({
       next: (data) => {
-        this.matches = data['matches'],
-        console.log(this.matches[0]);
+        this.matches = data['matches'];
+        const match: any = this.matches.find((match) => match?.status === "IN_PLAY")
+        console.log(match);
       },
       error: (error) => console.error(error),
     })
@@ -105,6 +30,13 @@ export class LiveScoreComponent implements OnInit{
     //   },
     //   error: (error) => console.error(error),
     // })
+  }
+
+  getMatchMinutes(dateStart: string, lastUpdate:string, halftime: string) {
+    let time = new Date(lastUpdate).getTime() - new Date(dateStart).getTime();
+    if (halftime !== null)
+      return Math.floor((((time / (1000 * 60)) % 60) + 45));
+    return Math.floor((time / (1000 * 60)) % 60);
   }
 
   hourFormat(date:string) : string {
@@ -121,5 +53,47 @@ export class LiveScoreComponent implements OnInit{
     return('');
   }
 
-  
+  getRoute(league: string) :string {
+    let route : string = "";
+
+    switch(league) {
+      case "Premier League":
+        route = "/standing/premierleague";
+        break;
+      case "Bundesliga":
+        route = "/standing/bundesliga";
+        break;
+      case "Primera Division":
+        route = "/standing/liga";
+        break;
+      case "Serie A" :
+        route = "/standing/serieA";
+        break;
+      case "Ligue 1" :
+        route = "/standing/ligue1";
+        break;
+      case "Eredivisie" :
+        route = "/standing/eredivisie";
+        break;
+      case "Primeira Liga" :
+        route = "/standing/primeiraliga";
+        break;
+      case "Campeonato Brasileiro Série A":
+        route = "/standing/brasileiroseriA";
+        break;
+      case "Championship":
+        route ="/standing/championship";
+        break;   
+    }
+    return route;
+  }
+
+  InplayStyle(matchStatus: string){
+    if (matchStatus === "IN_PLAY") {
+      return {
+        'color' : 'red',
+      }
+    };
+    return null;
+  }
 }

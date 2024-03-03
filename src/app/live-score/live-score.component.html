@@ -12,25 +12,32 @@
                 <img [src]="match?.area.flag" style="width: 18px; height: 18px; margin-right: 8px;">
                 <p style="font-family: 'sofia pro bold'; font-size: 11px;color: rgb(255, 255, 255);">{{match?.competition.name}}</p>
             </td>
-            <td class="tw-flex" style="color: rgb(0, 0, 0); font-family: 'sofia pro bold'; border-bottom-style: hidden;">
-                <p style="font-size: 11px; margin-right: 20px; margin-top: 15px;">{{hourFormat(match.utcDate)}}</p>
-                <img [src]="match?.homeTeam.crest" style="width: 15px; height: 15px;">
-                <p style="font-size: 11px; margin-left: 8px; margin-top: -1px;">{{match?.homeTeam.shortName}}</p>
+            <td class="tw-flex" style="font-size: 11px; font-family: sofia pro regular; border-bottom-style:hidden;">
+                <a [routerLink]="this.getRoute(match?.competition.name)" style="margin-left: 300px; margin-top: -35px; color: #fff;"><u>standing</u></a>
+            </td>
+            <td class="tw-flex" style="color: rgb(0, 0, 0); font-family: 'sofia pro bold'; border-bottom-style: hidden;" >
+                <p style="font-size: 11px;" [ngStyle]="InplayStyle(match?.status)">
+                    {{match.status === "IN_PLAY" ? getMatchMinutes(match?.utcDate, match?.lastUpdated, match?.score.halfTime.home) :  hourFormat(match.utcDate)}}
+                </p>
+            </td>
+            <td class="tw-flex" style="font-family: sofia pro bold; border-bottom-style:hidden; ">
+                <img [src]="match?.homeTeam.crest" style="width: 15px; height: 15px; margin-left: 50px; margin-top: -50px;">
+                <p style="font-size: 11px; margin-left: 5px; margin-top: -50px;">{{match?.homeTeam.shortName}}</p>
             </td> 
             <td class="tw-flex" style="font-family: 'sofia pro bold'; border-bottom-style: hidden;">
-                <p style="font-size: 10px; margin-left: 160px; margin-top: -48px;">{{getFtGoal(match?.score.fullTime.home)}}</p>
-                <p style="font-size: 10px; margin-top:-48px; margin-left: 20px;">{{getHtGoal(match?.score.halfTime.home)}}</p>
+                <p style="font-size: 10px; margin-left: 160px; margin-top: -65px;" [ngStyle]="InplayStyle(match?.status)">{{getFtGoal(match?.score.fullTime.home)}}</p>
+                <p style="font-size: 10px; margin-top:-65px; margin-left: 20px;">{{getHtGoal(match?.score.halfTime.home)}}</p>
             </td>
             <td class="tw-flex" style="color: black; font-family: 'sofia pro bold'; border-bottom-style: hidden;">
-                <img [src]="match?.awayTeam.crest" style="width: 15px; height: 15px; margin-left: 48px; margin-top: -30px;">
-                <p style="font-size: 11px; margin-left: 8px; margin-top: -30px;">{{match?.awayTeam.shortName}}</p>
+                <img [src]="match?.awayTeam.crest" style="width: 15px; height: 15px; margin-left: 48px; margin-top: -45px;">
+                <p style="font-size: 11px; margin-left: 8px; margin-top: -45px;">{{match?.awayTeam.shortName}}</p>
             </td>
             <td class="tw-flex" style="font-family: 'sofia pro bold'; margin-top: -25px; border-bottom-style: hidden;">
-                <p style="font-size: 10px; margin-left: 160px; margin-top: -20px;">{{getFtGoal(match?.score.fullTime.away)}}</p>
-                <p style="font-size: 10px; margin-top: -20px; margin-left: 20px;">{{getHtGoal(match?.score.halfTime.away)}}</p>
+                <p style="font-size: 10px; margin-left: 160px; margin-top: -36px;"[ngStyle]="InplayStyle(match?.status)">{{getFtGoal(match?.score.fullTime.away)}}</p>
+                <p style="font-size: 10px; margin-top: -36px; margin-left: 20px;" >{{getHtGoal(match?.score.halfTime.away)}}</p>
             </td>
-            <td class="tw-flex" style="font-family: sofia pro bold; font-size: 11px; margin-top: -20px;">
-                <p class="finished" style="margin-left: 250px; margin-top: -35px;">{{match?.status}}</p>
+            <td class="tw-flex" style="font-family: sofia pro bold; font-size: 11px; margin-top: -35px;">
+                <p class="finished" style="margin-left: 250px; margin-top: -38px;">{{match?.status}}</p>
             </td>
         </tr>
         <tr>
