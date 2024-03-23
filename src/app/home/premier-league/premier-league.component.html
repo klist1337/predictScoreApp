@@ -9,7 +9,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let match of matches ; let i = index" >
+            <tr *ngFor="let match of matches; let i=index">
                 <td class="tw-flex" style=" font-family: 'sofia pro bold'; font-size: 12px; 
                 border-bottom-style: hidden;">
                     <p style="color:rgb(0, 0, 0) ; margin-right: 8px; margin-top: 18px;">{{formatDate(match?.utcDate)}}</p>
@@ -21,8 +21,10 @@
                     <p style="margin-left: 4px; font-size: 12px; margin-top: -16px;">{{match?.awayTeam.shortName}}</p>
                 </td>
                 <td class="tw-flex bg-dark bg-gradient" style="font-family: 'sofia pro bold'; font-size: 12px;">
-                    <p style="color: #fff;">Prediction score:</p> 
-                    <p style="margin-left: 4px; color: #fff;">{{scores[i]}}</p></td>
+                    <button (click)="setData(match)">
+                       <u style="color: #fff;">See prediction</u>  
+                     </button>
+                </td>
             </tr>
         </tbody>
     </table>

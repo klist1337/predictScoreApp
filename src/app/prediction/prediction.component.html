@@ -1,0 +1,40 @@
+<div class="table-responsive tw-mt-4">
+   <table class="table">
+      <thead class="table-dark">
+         <tr>
+            <th class="tw-flex" style="font-family: sofia pro bold; font-size: 13px;">
+               <img [src]="data?.area?.flag" style="width: 20px; height:20px;">
+               <p style="margin-left: 4px;">{{data?.area?.name}}</p>
+               <p style="margin-left: 4px;" >: {{data?.competition?.name}}</p>
+            </th>
+         </tr>
+      </thead>
+   </table>
+   <div class="tw-flex tw-justify-center tw-h-[100px]">
+         <div class="tw-p-4 kard">
+            <div class="tw-flex tw-rounded tw-h-full tw-bg-white tw-shadow-lg ">
+               <img [src]="data?.homeTeam?.crest" class="img1">
+            </div>
+         </div>
+         <p class="bar crest1"></p>
+         <div class="tw-p-4 kard crest2">
+            <div class="tw-flex tw-rounded tw-h-full tw-bg-white tw-shadow-lg ">
+               <img [src]="data?.awayTeam?.crest" class="img2">
+         </div>
+      </div>
+   </div>
+   <div class="tw-flex tw-justify-center teamname1 ">
+      <p class="hometeam">{{data?.homeTeam?.shortName}}</p>
+   </div>
+   <div class="tw-flex tw-justify-center teamname2">
+      <p class="awayteam">{{data?.awayTeam?.shortName}}</p>
+   </div>
+   <div class="prediction">
+     <ul>
+      <li>Correct Score</li>
+      <li>Winner</li>
+      <li>Both Team Score</li>
+      <li>Total Goals in the Match </li>
+     </ul>
+   </div>
+</div>

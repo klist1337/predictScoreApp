@@ -1,0 +1,100 @@
+
+.crest1 {
+    margin-right: 200px;
+}
+
+.bar {
+    display: inline-block;
+    width: 18px;
+    height: 1px;
+    border: 3px solid rgb(90, 89, 89);
+    margin-left: 175px;
+    margin-top: 50px;
+    
+}
+
+.hometeam {
+    font-family: 'sofia pro bold';
+    font-size: 14px;
+    margin-right: 490px;
+}
+
+.awayteam {
+    font-family: 'sofia pro bold';
+    margin-top: -23px;
+    margin-left: 495px;
+    font-size: 14px;
+}
+
+.img1, .img2 {
+    width: 70px;
+    height: 70px;
+}
+@media screen and (max-width: 600px) {
+    
+    .crest1 {
+        margin-right: 60px;
+    }
+    .bar {
+        margin-left: 60px;
+        height: 2px;
+        border: 3px solid rgb(90, 89, 89);
+    }
+    .kard {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .img1, .img2 {
+        width: 50px;
+        height: 50px;
+    }
+    .teamname1 {
+        margin-top: -30px;
+    }
+    .teamname2 {
+        margin-top: 6px;
+    }
+    .hometeam {
+        font-size: 11px;
+        margin-right: 215px;
+    }
+    .awayteam {
+        font-size: 11px;
+        margin-left: 215px;
+    }
+}
+@media screen and (max-width: 500px) {
+    
+    .crest1 {
+        margin-right: 60px;
+    }
+    .bar {
+        margin-left: 60px;
+        height: 2px;
+        border: 3px solid rgb(90, 89, 89);
+    }
+}
+@media screen and (max-width: 300px) {
+    .crest1 {
+        margin-right: 15px;
+    }
+    .bar {
+        width: 8px;
+        height: 2px;
+        border: 3px solid rgb(90, 89, 89);
+        margin-left: 20px;
+    }
+    .hometeam {
+        font-size: 10px;
+        margin-right: 122px;
+    }
+    .teamname2 {
+        margin-top: 7px;
+    }
+    .awayteam {
+        font-size:10px;
+        margin-left:120px;
+    }
+
+}

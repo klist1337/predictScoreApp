@@ -9,6 +9,7 @@ import { HomeModule } from './home/home.module';
 import { LiveScoreComponent } from './live-score/live-score.component';
 import { HttpClientModule, provideHttpClient, withFetch } from '@angular/common/http';
 import { StandingModule } from './standing/standing.module';
+import { PredictionComponent } from './prediction/prediction.component';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { StandingModule } from './standing/standing.module';
     AppComponent,
     NavbarComponent,
     LiveScoreComponent,
+    PredictionComponent,
   ],
   imports: [
     BrowserModule,
@@ -27,7 +29,6 @@ import { StandingModule } from './standing/standing.module';
   ],
   providers: [
     provideHttpClient(withFetch()),
-    provideClientHydration()
   ],
   bootstrap: [AppComponent]
 })

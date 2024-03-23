@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FootballDataService } from '../football-data.service';
 import { error } from 'console';
+import { ShareDataService } from '../share-data.service';
 
 
   
@@ -18,8 +19,6 @@ export class LiveScoreComponent implements OnInit{
     .subscribe({
       next: (data) => {
         this.matches = data['matches'];
-        const match: any = this.matches.find((match) => match?.status === "IN_PLAY")
-        console.log(match);
       },
       error: (error) => console.error(error),
     })
