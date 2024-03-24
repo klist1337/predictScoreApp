@@ -30,6 +30,30 @@
     width: 70px;
     height: 70px;
 }
+
+.prediction ul li {
+    background-color: #211F1F;
+    margin-bottom: 20px;
+    height: 30px;
+    width: 60%;
+    margin-left: 20%;
+    font-family: 'sofia pro regular';
+    font-size: 13px;
+    color: white;
+}
+@media screen and (max-width:990px) {
+    .prediction ul li {
+        width: 80%;
+        margin-left: 10%;
+    }
+}
+@media screen and (max-width:700px) {
+    .prediction ul li {
+        width: 100%;
+        margin-left: 0%;
+    }
+}
+
 @media screen and (max-width: 600px) {
     
     .crest1 {
@@ -63,6 +87,11 @@
         font-size: 11px;
         margin-left: 215px;
     }
+    .prediction ul li {
+        background-color: #211F1F;
+        margin-bottom: 15px;
+        height: 30px;
+    }
 }
 @media screen and (max-width: 500px) {
     
@@ -95,6 +124,11 @@
     .awayteam {
         font-size:10px;
         margin-left:120px;
+    }
+    .prediction ul li {
+        background-color:#211F1F;
+        margin-bottom: 15px;
+        height: 20px;
     }
 
 }
