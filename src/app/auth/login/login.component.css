@@ -1,0 +1,153 @@
+ .login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+ }
+
+ h1 {
+   font-size: 36px;
+ }
+ 
+ .wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(0, 0, 0, 0.108);
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.2);
+    height: 400px;
+    width: 400px;
+ }
+
+ .wrapper .input-box {
+    border: 1px solid rgba(0, 0, 0, 0.214);
+    width: 105%;
+    height: 40px;
+    margin-bottom: 20px;
+    border-radius: 9999px;
+ }
+ .bxs-user {
+   margin-top: 12px;
+ }
+ input {
+    border: none;
+    background-color: transparent;
+    resize: none;
+    outline: none;
+ }
+
+ input[type="text"] {
+   margin-top: 2px;
+ }
+
+ input, input::placeholder {
+    font-size: 16px;
+    text-align: center;
+    margin-top: 6px;
+ }
+
+ .remember-forgot p {
+   margin-top: -2px;
+   margin-left: 4px;
+ }
+
+ .btn {
+   margin-top: 20px;
+    position:relative;
+    width: 110%;
+    color:rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+    border-radius: 999px;
+ }
+
+ .signup {
+   background-color: #ffb800;
+   box-shadow: 1px 0px 2px 1px rgba(0, 0, 0, 0.46);
+   width: 230px;
+   height: 398px;
+ }
+
+ .signup-text {
+   font-family: 'sofia pro regular';
+    text-align: center;
+    margin-top: 60%;
+    cursor: pointer;
+ }
+
+ .signup-text a:hover {
+   text-decoration: underline;
+ }
+ 
+
+@media screen and (max-width: 644px) {
+
+   .wrapper {
+      width: 350px;
+      height: 350px;
+   }
+   h1 {
+       font-size: 24px
+   }
+   .signup {
+      width: 200px;
+      height: 350px;
+   }
+
+   .signup-text {
+      font-size: 14px;
+   }
+   
+}
+
+@media screen and (max-width: 550px) {
+
+   .wrapper {
+      width: 200px;
+      height: 340px;
+   }
+   h1 {
+       font-size: 24px
+   }
+
+   .wrapper .input-box {
+      
+      width: 80%;
+      height: 30px;
+      margin-left: 20px;
+   }
+
+   input, input::placeholder {
+      font-size: 12px;
+      text-align: center;
+      margin-top: 4px;
+   }
+
+   .btn {
+      width: 70%;
+      margin-left: 20%;
+   }
+
+   .signup {
+      width: 150px;
+      height: 340px;
+   }
+
+   .signup-text {
+      font-size: 14px;
+   }
+
+   .bxs-user {
+      margin-top: 4px;
+      margin-right: 25px;
+   }
+
+
+   .remember-forgot label input{
+      margin-left: 19px;
+   }
+
+   .remember-forgot p {
+      margin-top: 3px;
+      font-size: 12px;
+    }
+}

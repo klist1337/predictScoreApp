@@ -2,18 +2,25 @@
     font-family: 'sofia pro regular';
 }
 .navbar-nav .nav-item .nav-link:hover {
+    text-decoration:overline;
     color:rgb(255, 198, 55);
     transition: 0.4s ease-in-out;
 }
 .active-link {
     color: rgb(255, 198, 55);
 }
+
 .nav-item .btn-primary {
     background-color: #fcb500;
     border-color:#ffc107;
     border-radius: 9999px;
+    color:black;
     font-family: 'sofia pro light';
 }
+
+.login .active-link , .signup .active-link {
+    color:rgb(255, 255, 255);
+} 
 
 @media screen and (max-width:992px) {
     

@@ -41,6 +41,14 @@
     font-size: 13px;
     color: white;
 }
+ul li p:nth-child(1) {
+    margin-top: 4px;
+}
+ul li p:nth-child(2) {
+    color: #ffb800;
+    margin-left: 4px;
+    margin-top:4px;
+}
 @media screen and (max-width:990px) {
     .prediction ul li {
         width: 80%;
@@ -128,7 +136,6 @@
     .prediction ul li {
         background-color:#211F1F;
         margin-bottom: 15px;
-        height: 20px;
     }
 
 }

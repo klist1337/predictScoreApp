@@ -17,6 +17,10 @@ const routes: Routes = [
   {
     path:'prediction',
     component: PredictionComponent,
+  },
+  {
+    path:'auth',
+    loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
   }
 ];
 

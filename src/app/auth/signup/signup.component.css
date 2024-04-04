@@ -1,0 +1,176 @@
+.signup {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   min-height: 80vh;
+}
+
+.wrapper {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border: 1px solid rgba(0, 0, 0, 0.108);
+   box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.2);
+   height: 400px;
+   width: 400px;
+   background-color: #ffb800;
+}
+.bx {
+   margin-top: 10px;
+}
+
+.wrapper .input-box {
+   border: 1px solid rgba(0, 0, 0, 0.214);
+   width: 80%;
+   height: 40px;
+   margin-bottom: 20px;
+   margin-left: 10%;
+   border-radius: 9999px;
+   background-color: #ffffff;
+}
+
+input {
+   border: none;
+   background-color: transparent;
+   resize: none;
+   outline: none;
+}
+h1 {
+   font-size: 30px;
+}
+
+input, input::placeholder {
+   font-size: 16px;
+   text-align: center;
+}
+
+.btn {
+  margin-top: 5px;
+   position:relative;
+   width: 90%;
+   color:rgb(255, 255, 255);
+   background-color: rgb(0, 0, 0);
+   border-radius: 999px;
+   margin-left: 4%;
+}
+
+.login {
+  background-color: #ffffff;
+  box-shadow: 1px 0px 2px 1px rgba(0, 0, 0, 0.46);
+  width: 230px;
+  height: 398px;
+}
+
+.login-text {
+  font-family: 'sofia pro regular';
+   text-align: center;
+   margin-top: 60%;
+   cursor: pointer;
+}
+
+.login-text a:hover {
+  text-decoration: underline;
+}
+
+
+@media screen and (max-width: 644px) {
+
+   .wrapper {
+      width: 300px;
+      height: 350px;
+   }
+   h1 {
+       font-size: 30px;
+   }
+
+   .wrapper .input-box {
+      margin-bottom: 10px;
+      height: 30%;
+   }
+
+   input, input::placeholder {
+      margin-top: 4px;
+   }
+ 
+   .login {
+      width: 200px;
+      height: 350px;
+   }
+
+   .login-text {
+      font-size: 14px;
+   }
+
+
+   
+}
+@media screen and (max-width: 510px) {
+
+   .wrapper {
+      width: 240px;
+      height: 350px;
+   }
+   h1 {
+       font-size: 30px;
+   }
+
+   .wrapper .input-box {
+      margin-bottom: 10px;
+      width: 70%;
+      height: 35px;
+   }
+   input {
+      margin-left: 3px;
+   }
+   input, input::placeholder {
+      margin-top: 4px;
+      font-size: 13px;
+   }
+ 
+   .login {
+      width: 150px;
+      height: 350px;
+   }
+
+   .login-text {
+      font-size: 14px;
+   }
+
+
+   
+}
+@media screen and (max-width: 440px) {
+
+   .wrapper {
+      width: 200px;
+      height: 350px;
+   }
+   h1 {
+       font-size: 24px;
+   }
+
+   .wrapper .input-box {
+      width: 155px;
+      margin-bottom: 10px;
+      height: 30px;
+   }
+
+   input, input::placeholder {      
+      font-size: 12px;
+   }
+   .bx {
+      margin-top: 3px;
+      margin-left: -6px;
+   }
+   .login {
+      width: 150px;
+      height: 350px;
+   }
+
+   .login-text {
+      font-size: 14px;
+   }
+
+
+   
+}

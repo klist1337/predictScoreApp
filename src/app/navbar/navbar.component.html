@@ -32,12 +32,12 @@
           <li class="nav-item">
             <a class="nav-link" [routerLink]="['/LiveScore']" [routerLinkActive]="['active-link']">Live Score</a>
           </li>
-          <li class="nav-item">
-            <a class="btn btn-primary tw-ml-8 tw-mr-2 responsive" role="button" data-bs-button="button">Signup at VIP</a>
+          <li class="nav-item login">
+            <a  class="btn btn-primary tw-ml-8 tw-mr-2 responsive" [routerLink]="['/auth/login']" [routerLinkActive]="['active-link']" role="button" data-bs-button="button">Login</a>
           </li>
-          <li class="nav-item">
-            <a class="btn btn-primary responsive" role="button" data-bs-button="button">Create an Account</a>
-          </li>
+          <li class="nav-item signup">
+            <a class="btn btn-primary responsive" [routerLink]="['/auth/signup']" [routerLinkActive]="['active-link']" role="button" data-bs-button="button">Create an Account</a>
+          </li> 
         </ul>
       </div>
     </div>
